@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router";
 import { useDataContext } from "../context/DataContext";
 import OverviewComponent from "../components/Overview";
 import CreateComponent from "../components/Create";

@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import { useDataContext } from "../context/DataContext";
 import ReadUpdateComponent from "../components/ReadUpdate";
 

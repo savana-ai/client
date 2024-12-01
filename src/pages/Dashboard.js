@@ -19,6 +19,7 @@ const Dashboard = () => {
               dataItem={dataStore[entityName].entity}
               dataList={dataStore[entityName].items}
               n={3} // Display top 3 items
+              onClick={(item) => navigate(`/read/${entityName}/${item.name}`)} // Direct onClick navigation
             />
           </div>
         </div>

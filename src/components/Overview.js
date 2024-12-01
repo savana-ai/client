@@ -1,13 +1,19 @@
-// Overview.js
 import React from "react";
-import { generateFields } from "../utils/utils";
 
-const OverviewComponent = ({ dataItem, dataList, n }) => {
+const OverviewComponent = ({ dataItem, dataList, n, onClick }) => {
   return (
-    <div className={`overview-${dataItem.name}`}>
-      {dataList.map((data, index) => (
-        <div key={index} className="overview-item">
-          {generateFields(dataItem.attributes.slice(0, n), "read", data)}
+    <div className="overview-container">
+      {dataList.slice(0, n).map((item, index) => (
+        <div
+          key={index}
+          className="overview-card"
+          onClick={() => onClick && onClick(item)} // Direct onClick event
+        >
+          {dataItem.attributes.slice(0, n).map((attr, i) => (
+            <div key={i} className="overview-field">
+              <strong>{attr.name}:</strong> {item[attr.name]}
+            </div>
+          ))}
         </div>
       ))}
     </div>
